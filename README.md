@@ -25,7 +25,7 @@ In Ubuntu 16.04 LTS you need to apply a fix:
 
 Either build the `vizdoom` image:
 
-    docker build -t vizdoom .
+    docker build -t frostbitelabs/vizdoom .
 
 or pull it from Docker Hub:
 
@@ -38,4 +38,4 @@ or pull it from Docker Hub:
                       -e DISPLAY                       \
 		      -v /tmp/.X11-unix                \
 		      -v $XAUTHORITY:/root/.Xauthority \
-		      vizdoom
+		      frostbitelabs/vizdoom
