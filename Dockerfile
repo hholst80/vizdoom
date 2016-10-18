@@ -10,10 +10,9 @@ RUN apt-get update && \
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 ENV DOOMWADDIR /vizdoom/scenarios
 
-RUN git clone --depth 1 https://github.com/Marqt/ViZDoom /vizdoom
-
 WORKDIR /vizdoom
 
+RUN git clone --depth 1 https://github.com/Marqt/ViZDoom .
 RUN cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_PYTHON=ON -DBUILD_JAVA=ON
 RUN make
 
