@@ -16,4 +16,5 @@ nvidia-docker run -it --rm                         \
                   -e XAUTHORITY=/root/.Xauthority  \
                   -v /tmp/.X11-unix:/tmp/.X11-unix \
                   -v $XAUTH:/root/.Xauthority      \
+                  -v $HOME/.config/vizdoom:/root/.config/vizdoom \
                   frostbitelabs/vizdoom
