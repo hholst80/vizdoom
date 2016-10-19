@@ -10,8 +10,6 @@ Add yourself to the `docker` group:
 
     sudo usermod -a -G docker $(id -un)
 
-TODO: Add instructions for custom DNS server used by Docker Engine.
-
 ## Step 2: Install NVIDIA Docker Plugin
 
 Follow the instructions at https://github.com/NVIDIA/nvidia-docker
@@ -27,15 +25,36 @@ Either build the `vizdoom` image:
 
     docker build -t frostbitelabs/vizdoom .
 
-or pull it from Docker Hub:
+or (faster unless you are on dial-up) pull it from Docker Hub:
 
     docker pull frostbitelabs/vizdoom
 
 ## Step 4: Run ViZDoom
 
-    nvidia-docker run -it --rm                         \
-                      -e XAUTHORITY=/root/.Xauthority  \
-                      -e DISPLAY                       \
-		      -v /tmp/.X11-unix                \
-		      -v $XAUTHORITY:/root/.Xauthority \
-		      frostbitelabs/vizdoom
+Just run the script:
+
+    ./launch.sh
+
+# QA
+
+## There is no music
+
+Don't worry about it. The music in Freedoom kind of sucks. If you don't believe
+me you can enable it in Options> Sound Options> Midi Device and selecting
+Fluidsynth.
+
+## I have an old NVIDIA graphics card and NVIDIA droppped support for it!
+
+It our own fault. We should upgrade our GPUs. 
+...or...
+NVIDIA should appreciate that games built their fortune and help us out. ;-)
+
+http://stackoverflow.com/questions/40117277/running-nvidia-docker-with-nouveau-graphics-drivers
+
+## I am not as awesome as I used to be at Doom. Help!
+
+No worries. `idkfa` and `iddqd` still works. What did you expect? :-)
+
+## idkfa? iddqd? what are you talking about?
+
+I bet you have a really high score at Candy crush saga?
