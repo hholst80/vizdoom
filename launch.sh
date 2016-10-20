@@ -8,7 +8,7 @@ XAUTH="$(mktemp -p $HOME -t .Xauth.XXXX)"
 
 trap finish EXIT
 
-xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+xauth nlist | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 
 nvidia-docker run -it --rm                         \
 		  --device /dev/snd:/dev/snd       \
